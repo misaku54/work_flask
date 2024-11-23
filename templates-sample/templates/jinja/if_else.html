@@ -1,0 +1,14 @@
+{% extends "jinja/base2.html" %}
+{% block title %}render_template{% endblock %}
+{% block header %}<h1>条件分岐</h1>{% endblock %}
+{% block content %}
+  {% if color== 'red' %}
+    <p>赤色</p>
+  {% elif color== 'blue' %}
+    <p>青色</p>
+  {% elif color== 'yellow' %}
+    <p>黄色</p>
+  {% else %}
+    <p>選択以外</p>
+  {% endif %}
+{% endblock %}

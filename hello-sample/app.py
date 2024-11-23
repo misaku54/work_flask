@@ -1,0 +1,14 @@
+# flaskモジュール内にあるFlaskクラスを使用する
+from flask import Flask
+
+# インスタンス生成
+app = Flask(__name__)
+
+# ルーティング
+@app.route('/')
+def hello_world():
+  return '<h1>はろーわーるど</h1>'
+
+# 実行
+if __name__ == '__main__':
+  app.run()
