@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 # 現在のスクリプトが存在するディレクトリのパスを取得
 base_dir = os.path.dirname(__file__)
-database = 'sqlite://' + os.path.join(base_dir, 'data.sqlite')
+database = 'sqlite:///' + os.path.join(base_dir, 'data.sqlite')
 
 # データベースエンジンを作成
 db_engine = create_engine(database, echo=True)
