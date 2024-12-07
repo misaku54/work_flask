@@ -29,6 +29,7 @@ def calculate():
             continue
       else:
         print('無効な操作です')
+  # 正しい型だが適切でない値を持つ引数を受け取ったときに発生するエラー
   except ValueError as e:
     print(e)
     print('処理を終了します。')
