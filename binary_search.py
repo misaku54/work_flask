@@ -11,20 +11,32 @@
 # 中心の数＝検索値ならその番号を表示して終了
 
 
-def binary_search(array):
-  # 検索値の設定
-  key = 19
+def binary_search(array, value):
+  # 左端
+  left = 0
+  # 右端
+  right = len(array) - 1
 
   # ループ
-  # 中心値を求める(商を求める)
-  mdl_idx = len(array) // 2
+  while left <= right:
+    # 中心値を求める(商を求める)
+    mdl_idx = (left + right) // 2
 
-  while key == array[mdl_idx]:
-    if key > array[mdl_idx]:
-      # 中心値を戻る
-      (mdl_idx + 1)
-
+    if value > array[mdl_idx]:
+      left = mdl_idx + 1
+    elif value < array[mdl_idx]:
+      right = mdl_idx - 1
+    else:
+      # イコール
+      return mdl_idx
   
-
+  # 検索値が見つからない場合
+  return None
+  
+value = 17
 array = [2,3,5,6,17,19,100]
-binary_search(array)
+youso = binary_search(array, value)
+if youso is not None:
+  print(f'value:{value}は、arrayの{youso + 1}番目にあります')
+else:
+  print('見つかりませんでした')
