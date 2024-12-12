@@ -4,8 +4,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
 # DBファイル作成
-base_dir = os.path(__file__)
-database = 'sqlite://' + os.path.join(base_dir, 'data.sqlite')
+base_dir = os.path.dirname(__file__)
+database = 'sqlite:///' + os.path.join(base_dir, 'data.sqlite')
 
 # データベースに接続するためのデータベースエンジンの作成(echo=Trueで実行するSQLをターミナルに表示
 db_engine = create_engine(database, echo=True)
@@ -39,7 +39,7 @@ class Employee(Base):
   department_id = Column(Integer, ForeignKey('departments.id'))
 
   # リレーション(1:1)
-  department = relationship('Department', back_populates='employee', uselist=False)
+  department = relationship('Department', back_populates='employees', uselist=False)
 
   def __str__(self):
     return f"従業員ID:{self.id}, 従業員:{self.name}"
