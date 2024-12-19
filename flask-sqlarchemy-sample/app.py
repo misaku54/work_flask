@@ -11,7 +11,7 @@ database = 'sqlite:///' + os.path.join(base_dir, 'data.sqlite')
 app.config['SQLARCHEMY_DATABASE_URI'] = database
 app.config['SQLARCHEMY_TRACK_MODIFICATIONS'] = False
 
-# 変数dbを通してSQLAlchemyを操作できる
+# 変数dbを通してSQLAlchemyを操作
 db = SQLAlchemy(app)
 
 class Task(db.Model):
